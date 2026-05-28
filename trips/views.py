@@ -6,7 +6,7 @@ from trips.serializers import TravelProjectSerializer, ProjectPlaceSerializer
 
 
 class TravelProjectViewSet(viewsets.ModelViewSet):
-    queryset = TravelProject.objects.prefetch_related("places")
+    queryset = TravelProject.objects.prefetch_related("project_places")
     serializer_class = TravelProjectSerializer
 
     def destroy(self, request, *args, **kwargs):
